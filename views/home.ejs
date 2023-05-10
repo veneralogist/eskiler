@@ -1,0 +1,10 @@
+
+<%- include('partials/header') %>
+<h1 class="posth1">Home</h1>
+<p class=" post-p rounded"><%= hsc %></p>
+<% psts.forEach(post => { %>
+ <h1 class="posth1"><%= post.title %></h1>
+ <p class="post-p rounded"><%= post.content.slice(0,100) %> <a href="/posts/<%=post.title %>">gerisini oku</a></p>
+
+<% }) %>
+<%- include('partials/footer') %>
