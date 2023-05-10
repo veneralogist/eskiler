@@ -99,6 +99,9 @@ app.post("/compose",function(req,res){
 
 }
 })
+app.get("/agac", function (req, res) {
+  res.render("agac");
+});
 
 
 
