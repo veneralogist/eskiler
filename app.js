@@ -83,7 +83,7 @@ app.post("/dogrula", function (req, res) {
     req.session.loggedIn = true;
     res.redirect("/home");
   } else {
-    res.render("error", {});
+    res.redirect("/");
   }
 });
 
