@@ -1,6 +1,22 @@
 <%- include('partials/header') %>
+
+<% if (tip){%>
+    <style>
+      .giz{
+        display: inline;
+      }
+      
+      </style>
+   <% } else { %>
+    <style>
+      .giz{
+        display: none;
+      }
+    </style>
+    <% }%>
+
 <div class="center">
-    <form action="/sifre" method="post">
+    <form action="/" method="post">
         <h1 class="yanlis" style="color:black">Yanlış şifre girdiniz</h1>
         <button type="submit" class="btn btn-yanlis">Tekrar deneyin</button>
     </form>

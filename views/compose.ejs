@@ -1,12 +1,28 @@
 <%- include('partials/header') %>
-<h1>Compose</h1>
+<% if (tip){%>
+    <style>
+      .giz{
+        display: inline;
+      }
+      
+      </style>
+   <% } else { %>
+    <style>
+      .giz{
+        display: none;
+      }
+    </style>
+    <% }%>
+<h1>Yeni yazı</h1>
 <form action="/compose" method="post" >
     <div class="form-group">
-    <label >Title</label>
+    <label >Başlık</label>
     <input class="form-control" name="postTitle" type="text">
+    <label >yazar</label>
+    <input class="form-control" name="postWriter" type="text">
     <label>Post </label>
-    <textarea class="form-control" name="postBody" rows="10" ></textarea>
-    <button type="submit" style="display: block; margin: 10px auto;" class="btn btn-primary">Post</button>
+    <textarea class="form-control" name="postBody" rows="10"class="preserve-whitespace" ></textarea>
+    <button type="submit" style="display: block; margin: 10px auto;" class="btn btn-primary">yayınla</button>
     </div>
     
 </form>

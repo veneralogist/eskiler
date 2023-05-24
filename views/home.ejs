@@ -1,10 +1,54 @@
-
 <%- include('partials/header') %>
-<h1 class="posth1">Home</h1>
-<p class=" post-p rounded"><%= hsc %></p>
-<% psts.forEach(post => { %>
- <h1 class="posth1"><%= post.title %></h1>
- <p class="post-p rounded"><%= post.content.slice(0,100) %> <a href="/posts/<%=post.title %>">gerisini oku</a></p>
 
-<% }) %>
+<% if (tip){%>
+  <style>
+    .giz{
+      display: inline;
+    }
+    
+    </style>
+ <% } else { %>
+  <style>
+    .giz{
+      display: none;
+    }
+  </style>
+  <% }%>
+
+
+<div class="container">
+    <div style="text-align: center">
+   <h1>Home</h1>
+   <p><%= hsc %></p>
+    </div>
+  
+    <hr style="padding: 1% 0;">
+  
+  <div class="row">
+    <% psts.forEach(post => { %>
+    <div class="col-md-3">
+      <div class="card mb-4">
+        <div class="card-body" style="height: 10%;">
+          <h5 class="card-title"><%= post.title %></h5>
+          <h6 class="card-subtitle mb-2"><%= post.yazar %></h6>
+          <p class="card-text"><%= post.content.slice(0,100) %></p>
+          <div class="row">
+            <div class="col-6">
+              <form action="/posts/<%=post.title%>" method="get">
+                <button class="btn btn-git" style="background-color: #F99B7D;color: black;">gerisini oku</button>
+              </form>
+            </div>
+            <div class="col-6">
+              <form action="/duzenle/<%=post.title%>" method="get" class="giz" >
+                <button class="btn btn-git giz" style="background-color: #F99B7D;color: black;"type="submit">düzenle</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
 <%- include('partials/footer') %>

@@ -1,0 +1,16 @@
+
+<%- include('partials/header') %>
+<form action="/onayla" method="post" >
+    <div class="form-group">
+    <input type="hidden" name="id" value=<%= post._id %>>
+    <label >Başlık</label>
+    <input class="form-control" name="title" type="text" value=<%= post.title.replace(/\s/g, "_") %>>
+    <label >yazar</label>
+    <input class="form-control" name="yazar" type="text" value=<%= post.yazar.replace(/\s/g, "_") %>>
+    <label>Post </label>
+    <textarea class="form-control" name="content" rows="10" class="preserve-whitespace" ><%=post.content %></textarea>
+    <button type="submit" style="display: block; margin: 10px auto;" class="btn btn-primary">yayınla</button>
+    
+    </div>
+    
+</form>

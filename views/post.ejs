@@ -1,7 +1,36 @@
 <%- include('partials/header') %>
 
-<h1 class="posth1"><%= pst.title %></h1>
-<p class="post-p rounded"><%= pst.content %></p>
+<style>
+  body{
+    background-color: #F99B7D;
+  }
+</style>
+
+
+<% if (tip){%>
+  <style>
+    .giz{
+      display: inline;
+    }
+    
+    </style>
+ <% } else { %>
+  <style>
+    .giz{
+      display: none;
+    }
+  </style>
+  <% }%>
+
+<div style="text-align: center;">
+  <div style="max-width: 70%; margin: 0 auto;">
+    <h1 class="posth1"><%= pst.title %></h1>
+    <h4 class="posth1"><%= pst.yazar %> </h4>
+    <p style="font-weight: bold;"class="preserve-whitespace" ><%= pst.content %></p>
+  </div>
+</div>
+
+
 
  
 
