@@ -79,7 +79,7 @@ app.get("/posts/:title", async function (req, res) {
 app.post("/dogrula", function (req, res) {
   console.log(process.env.SIFRE);
   console.log(req.body.sifre);
-  if (req.body.sifre === process.env.SIFRE) {
+  if (req.body.sifre === "eskiler2178200") {
     req.session.loggedIn = true;
     res.redirect("/home");
   } else {
