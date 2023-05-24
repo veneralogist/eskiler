@@ -5,6 +5,9 @@
 }
 body{
     background-color:#8BACAA ;
+    height: 110vh;
+    overflow-y: auto; /* Yalnızca dikey kaydırma çubuğunu göster */
+
 }
 .navbar {
     background-color:#B04759;
@@ -16,6 +19,8 @@ body{
     font-size: 12px;
     letter-spacing: 5px;
     color: #8BACAA;
+    
+    
 }
 
 .center{
